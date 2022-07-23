@@ -1,58 +1,54 @@
 public class Main {
     public static void main(String[] args) {
+      Cliente primero = new Cliente();
+      primero.setnombre("Joaquin");
+      primero.setedad(10);
+      primero.settelefono(1245212);
+      primero.setcredito(20000);
+      Trabajador segundo = new Trabajador();
+      segundo.setnombre("Bruno");
+      segundo.setedad(20);  
+      segundo.settelefono(1245212);
+      segundo.setSueldo(40000);
+System.out.println(primero.nombre);
+System.out.println(primero.edad);
+System.out.println(primero.telefono);
+System.out.println(primero.credito);
+System.out.println(segundo.nombre);
+System.out.println(segundo.edad);
+System.out.println(segundo.telefono);
+System.out.println(segundo.sueldo);
 
-
-        Persona anibal = new Persona();
-        anibal.setNombre("Anibal");
-        anibal.setEdad(44);
-        anibal.setTelefono(11256565);
-
-        System.out.println(anibal.getNombre());
-        System.out.println(anibal.getEdad());
-        System.out.println(anibal.getTelefono());
-
+    }
 }
- }
+ 
 
 
-
-    //////////////////////////////////////////////////////////////////
-
-     
-class Coche {
-    int puertas = 2;
-
-  public void agregarPuerta () {
-    this.puertas++;
-  }
-
-}
 class Persona {
-private int edad;
-private String nombre;
-private int telefono;
+  int edad;
+  String nombre;
+  int telefono;
 
-
-public  void setEdad (int edad) {
-    this.edad = edad;
-}
-public  void setNombre (String nombre) {
+  public void setnombre(String nombre) {
     this.nombre = nombre;
-
-}
-public  void setTelefono (int telefono) {
+  }
+  public void setedad(int edad) {
+    this.edad = edad;
+  }
+  public void settelefono(int telefono) {
     this.telefono = telefono;
+  }
+}
+class Cliente extends Persona {
+  int credito;
+  public void setcredito(int credito) {
+    this.credito = credito;
+  }
+}
 
- }
- public  int getEdad () {
-    return this.edad;  
-    }  
-  public  String getNombre () {
-    return this.nombre;
-
-
-     }
-  public  int getTelefono () {
-    return this.telefono;
-     }
-      }
+class Trabajador extends Persona {
+  int sueldo;
+  public void setSueldo(int sueldo) {
+    this.sueldo = sueldo;
+  }
+}
